@@ -67,6 +67,17 @@ RSpec.describe StringCalculator do
         expect(StringCalculator.add("//[**][%%]\n1**2%%3")).to eq(6)
       end
     end
-      
+
+    context 'with multiple custom delimiters' do
+        it 'returns the sum' do
+          expect(StringCalculator.add("//[;][%%]\n3;6%%8")).to eq(17)
+        end
+    end
+
+    context 'with multiple custom delimiters' do
+        it 'returns the sum' do
+          expect(StringCalculator.add("//[&][%%]\n3&6%%41")).to eq(50)
+        end
+    end
   end
 end
